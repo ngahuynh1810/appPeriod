@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_lich"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Lịch" />
+        <item
+            android:id="@+id/nav_nhatky"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Nhật ký" />
+        <item
+            android:id="@+id/nav_bieudo"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Biểu đồ" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Cài đặt" />
+
+    </group>
+
+    <item android:title="Cài đặt">
+        <menu>
+            <item
+                android:id="@+id/nav_caidat"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Cài đặt chung" />
+            <item
+                android:id="@+id/nav_ngonngu"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Ngôn ngữ" />
+        </menu>
+    </item>
+
+</menu>
