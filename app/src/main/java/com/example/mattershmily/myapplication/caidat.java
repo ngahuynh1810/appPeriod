@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class lich extends AppCompatActivity {
+public class caidat extends AppCompatActivity {
     Toolbar toolbar;
 
     @Override
@@ -17,7 +17,7 @@ public class lich extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //Không hiện tiêu đề
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("Lịch");
+        getSupportActionBar().setTitle("Cài đặt");
         //Hiện nút back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

@@ -9,15 +9,25 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
        //final String DATABASE_NAME=".sqlite";
     //SQLiteDatabase Database;
+    Button btn_lich;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn_lich=(Button)findViewById(R.id.btn_lich);
+        btn_lich.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         //Database=database.initDatabase(this,DATABASE_NAME);
         //Cursor cursor=Database.rawQuery("SELECT * FROM sinhvien",null);
         //cursor.moveToFirst();
@@ -79,9 +89,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_bieudo) {
 
-        } else if (id == R.id.nav_caidat) {
-
-
+        } else if (id == R.id.nav_manage) {
+            Intent u = new Intent(this,caidat.class);
+            startActivity(u);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -7,17 +7,20 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mattershmily.myapplication.MainActivity"
     tools:showIn="@layout/app_bar_main"
-    android:background="@drawable/background_image"
+    android:background="@drawable/anh"
 
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+       >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kỳ kinh sắp tới   "
+
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             />
@@ -32,7 +35,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,7 +57,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,34 +82,45 @@
 
         android:layout_height="500dp"
         android:layout_marginBottom="100dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical"
-        android:layout_marginTop="150dp"
-        android:background="#80ffbf77">
+        android:layout_marginTop="200dp"
+        >
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/btn_lich"
             android:background="@drawable/custom_button_home"
             android:textColor="#eeff8b"
             android:text="Lịch" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:id="@+id/btn_nhatky"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+           android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+           android:layout_gravity="center"
             android:background="@drawable/custom_button_home"
             android:text="Nhật ký"
             android:textColor="#eeff8b"
+
             />
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
             android:background="@drawable/custom_button_home"
             android:textColor="#eeff8b"
             android:text="Biểu đồ" />

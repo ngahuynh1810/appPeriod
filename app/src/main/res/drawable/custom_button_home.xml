@@ -25,8 +25,8 @@
     <item>            <!-- Trạng thái bình thường khi không click -->
         <shape>
             <gradient
-                android:startColor="#ef586a"
-                android:endColor="#d28b9b"
+                android:startColor="#fc9a7c"
+                android:endColor="#d9ffc89e"
                 android:angle="270" />
             <!--<solid-->
                 <!--android:color="#d76767" />            &lt;!&ndash; Thiết lập màu nền cho nút &ndash;&gt;-->
