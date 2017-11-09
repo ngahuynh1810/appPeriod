@@ -3,8 +3,8 @@
     <item android:state_pressed="true" >   <!-- Trạng thái khi nút click -->
         <shape>
             <gradient
-                android:startColor="#f4003d"
-                android:endColor="#da5e79"
+                android:startColor="#fc9a7c"
+                android:endColor="#d9ffc89e"
                 android:angle="270" />
 
             <stroke
@@ -25,9 +25,10 @@
     <item>            <!-- Trạng thái bình thường khi không click -->
         <shape>
             <gradient
-                android:startColor="#fc9a7c"
-                android:endColor="#d9ffc89e"
-                android:angle="270" />
+                android:startColor="#f4003d"
+                android:endColor="#da5e79"
+                android:angle="270"
+                 />
             <!--<solid-->
                 <!--android:color="#d76767" />            &lt;!&ndash; Thiết lập màu nền cho nút &ndash;&gt;-->
 
@@ -36,7 +37,7 @@
                 android:color="#FFFFFF" />
 
             <corners
-                android:radius="5dp" />
+                android:radius="20dp" />
 
             <padding
                 android:left="10dp"

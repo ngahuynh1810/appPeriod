@@ -22,7 +22,7 @@
             android:text="Kỳ kinh sắp tới   "
 
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             />
         <TextView
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Kỳ rụng trứng sắp tới   "
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
 
             />
         <TextView
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:text="Khả năng thụ thai   "
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
 
             />
         <TextView
@@ -85,11 +85,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="170dp"
         >
 
         <Button
-            android:layout_width="280dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -102,7 +102,7 @@
 
         <Button
             android:id="@+id/btn_nhatky"
-            android:layout_width="280dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -115,7 +115,7 @@
             />
 
         <Button
-            android:layout_width="280dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"

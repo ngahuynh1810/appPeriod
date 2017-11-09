@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.mattershmily.myapplication.lich">
 
 
@@ -14,4 +15,19 @@
         android:background="#ffd39c"
         android:title="Lịch">
     </android.support.v7.widget.Toolbar>
+    <CalendarView
+        android:id="@+id/calendar"
+        android:background="@drawable/anh"
+        android:layout_width="wrap_content"
+        android:layout_height="450dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+    </CalendarView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Thêm Ghi chú"
+        android:background="@drawable/custom_button_home"
+        />
 </LinearLayout>
