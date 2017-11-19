@@ -1,12 +1,21 @@
 package com.example.mattershmily.myapplication;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 public class lich extends AppCompatActivity {
     Toolbar toolbar;
     CalendarView calendar;
@@ -18,21 +27,57 @@ public class lich extends AppCompatActivity {
         //Khởi tạo toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         //Không hiện tiêu đề
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Lịch");
         //Hiện nút back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
         calendar = (CalendarView) findViewById(R.id.calendar);
+        calendar.setFirstDayOfWeek(2);
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onSelectedDayChange(CalendarView view, int i, int i1, int i2) {
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd//mm//yy");
+            public void onSelectedDayChange(CalendarView view, final int i, final int i1, final int i2) {
+                final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yy");
                 Toast.makeText(getApplicationContext(), i2 + "/" + i1 + "/" + i, Toast.LENGTH_LONG).show();
+                Button btn_ghichu=(Button) findViewById(R.id.btn_ghichu);
+                btn_ghichu.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        AlertDialog dialog = new AlertDialog.Builder(lich.this)
+                                .setTitle(i2+"thang"+i1+"nam"+i)
+                                .setMessage("Thêm chu kỳ mới")
+                                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i3) {
+                                     //   Toast.makeText(lich.this,i2+"thang"+i1+"nam"+i,Toast.LENGTH_LONG).show();
+                                        Date date = null; // You will need try/catch around this
+
+                                        try {
+                                            date = simpleDateFormat.parse(i2+"/"+i1+"/"+i);
+                                        } catch (ParseException e) {
+                                            e.printStackTrace();
+                                        }
+                                        long millis = date.getTime();
+                                            Toast.makeText(lich.this,millis+" ",Toast.LENGTH_LONG).show();
+
+
+                                    }
+                                })
+                                .create();
+                        dialog.show();
+
+                    }
+                });
             }
         });
+
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mattershmily.myapplication.updateDDCKActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffd39c"
+        android:title="Độ dài kinh nguyệt">
+
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:id="@+id/txtDoDaiKinhNguyet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Độ dài kình nguyệt"
+        android:textSize="25dp"/>
+    <EditText
+        android:id="@+id/edDoDaiKinhNguyet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Độ dài kinh nguyệt thường kéo dài từ 4-7 ngày"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:id="@+id/save_ddck"
+        android:text="Save"
+
+        />
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.mattershmily.myapplication;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,17 +14,17 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-       //final String DATABASE_NAME=".sqlite";
-    //SQLiteDatabase Database;
+       final String DATABASE_NAME="c.sqlite";
+    SQLiteDatabase Database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Database=database.initDatabase(this,DATABASE_NAME);
-        //Cursor cursor=Database.rawQuery("SELECT * FROM sinhvien",null);
-        //cursor.moveToFirst();
+        Database=database.initDatabase(this,DATABASE_NAME);
+        Cursor cursor=Database.rawQuery("SELECT * FROM datePeriod",null);
+        cursor.moveToFirst();
         //Toast.makeText(this,cursor.getString(1),Toast.LENGTH_LONG).show();
 
 
@@ -78,7 +80,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
             // Handle the camera action
         } else if (id == R.id.nav_nhatky) {
-
+            Intent k = new Intent(this,nhatky_tabhost.class);
+            startActivity(k);
         } else if (id == R.id.nav_bieudo) {
 
         } else if (id == R.id.nav_manage) {

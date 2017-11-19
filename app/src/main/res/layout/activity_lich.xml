@@ -18,16 +18,21 @@
     <CalendarView
         android:id="@+id/calendar"
         android:background="@drawable/anh"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="450dp"
+
+        android:showWeekNumber="true"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
     </CalendarView>
+
     <Button
+        android:id="@+id/btn_ghichu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Thêm Ghi chú"
         android:background="@drawable/custom_button_home"
-        />
+        android:text="Thêm Ghi chú" />
+
+
 </LinearLayout>

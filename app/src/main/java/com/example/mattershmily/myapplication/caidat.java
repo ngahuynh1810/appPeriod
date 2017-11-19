@@ -1,9 +1,14 @@
 package com.example.mattershmily.myapplication;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,6 +24,13 @@ public class caidat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caidat);
+        final String DATABASE_NAME="c.sqlite";
+        SQLiteDatabase Database;
+        Database=database.initDatabase(this,DATABASE_NAME);
+        Cursor cursor=Database.rawQuery("SELECT * FROM caidat",null);
+        cursor.moveToFirst();
+        final String s=cursor.getString(1);
+        final String s2=cursor.getString(2);
         //Khởi tạo toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,7 +52,19 @@ public class caidat extends AppCompatActivity {
             arrayDb.add(new item_caidat("Ngôn ngữ","",R.drawable.caidat));
             Adapter=new adapter_caidat(this,R.layout.item_caidat,arrayDb);
             lvDb.setAdapter(Adapter);
+            lvDb.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    Intent o = new Intent(caidat.this, updateDDCKActivity.class);
+                    o.putExtra("loichao",s);
+                    o.putExtra("duongdan", s2);
+                    startActivity(o);
+
+                }
+            });
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
