@@ -31,7 +31,7 @@ public class caidat extends AppCompatActivity {
             lvDb=(ListView) findViewById(R.id.lv);
             arrayDb=new ArrayList<>();
             //gan du lieu cho mang trong listview
-            arrayDb.add(new item_caidat("Độ dài kinh nguyệt","",R.drawable.icon_hoa));
+        arrayDb.add(new item_caidat("Độ dài kinh nguyệt", "", R.drawable.icon_flower));
             arrayDb.add(new item_caidat("Độ dài chu kỳ","",R.drawable.clock));
             arrayDb.add(new item_caidat("Giai đoạn hoàng thể","",R.drawable.book));
             arrayDb.add(new item_caidat("Nhắc nhở","",R.drawable.nhacnho));
