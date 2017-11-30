@@ -9,9 +9,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -47,20 +48,31 @@
                 android:resource="@layout/activity_lich" />
         </receiver>
 
-        <activity android:name=".nhatky_tabhost"
+        <activity
+            android:name=".nhatky_tabhost"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".tab1Activity" />
         <activity android:name=".tab2Activity" />
-        <activity android:name=".updateDDCKActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+        <activity
+            android:name=".updateDDCKActivity"
             android:parentActivityName=".caidat"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".updateDDKNActivity"
+            android:parentActivityName=".caidat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PasswordActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
     </application>
-
-
 
 </manifest>
