@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\appPeriod\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "D:\\appPeriod\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\appPeriod\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
+        "source": "D:\\appPeriod\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
+    }
+]

@@ -1,53 +1,178 @@
 package com.example.mattershmily.myapplication;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 
 
 public class lich extends AppCompatActivity {
     Toolbar toolbar;
+    Button btn_reset;
+    Long dulieududoan;
     CalendarView calendar;
+    MaterialCalendarView materialCalendarView;
+    int myColor = R.color.colorAccent;
+    ArrayList<CalendarDay> list = new ArrayList<>();
+    ArrayList<CalendarDay> Preditlist = new ArrayList<>();
+    //load list tu database
+    public void loadlist()
+    {
+
+        final String DATABASE_NAME="Period.sqlite";
+        SQLiteDatabase Database;
+        Database=database.initDatabase(this,DATABASE_NAME);
+        Cursor cursor=Database.rawQuery("SELECT * FROM AddPeriod",null);
+        cursor.moveToFirst() ;
+            do {
+                final Long long_date=cursor.getLong(1);
+                Date date=new Date(long_date);
+              //  Toast.makeText(lich.this,long_date+"Ngay load tu database là: "+date,Toast.LENGTH_LONG).show();
+
+                CalendarDay calendarDay = CalendarDay.from(date);
+
+                list.add(calendarDay);
+            }
+            while (cursor.moveToNext());
+            materialCalendarView.addDecorator(new EventDecorator(myColor,list,lich.this));
+
+        }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lich);
+        btn_reset= (Button) findViewById(R.id.btn_reset);
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String DATABASE_NAME="cin.sqlite";
+                final SQLiteDatabase Database;
+                Database=database.initDatabase(lich.this,DATABASE_NAME);
+
+                Database.delete("Period","",null);
+            }
+        });
         final MaterialCalendarView materialCalendarView=(MaterialCalendarView) findViewById(R.id.calendarView);
         materialCalendarView.state().edit()
-                .setFirstDayOfWeek(Calendar.WEDNESDAY)
-                .setMinimumDate(CalendarDay.from(2016, 4, 3))
-                .setMaximumDate(CalendarDay.from(2020, 5, 12))
+                .setFirstDayOfWeek(Calendar.MONDAY)
+                .setMinimumDate(CalendarDay.from(1970, 4, 3))
+                .setMaximumDate(CalendarDay.from(2030, 5, 12))
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
+       materialCalendarView.setSelectionColor(Color.parseColor("#00BCD4"));
+        final String DATABASE_NAME_2="c.sqlite";
+        final SQLiteDatabase Database2;
+        Database2=database.initDatabase(this,DATABASE_NAME_2);
 
+        Cursor cursor2=Database2.rawQuery("SELECT * FROM caidat",null);
+        cursor2.moveToFirst();
+        final int ddkn=cursor2.getInt(1);
+        final int ddck=cursor2.getInt(2);
+
+        final String DATABASE_NAME="cin.sqlite";
+        final SQLiteDatabase Database;
+        Database=database.initDatabase(this,DATABASE_NAME);
+
+        Cursor cursor=Database.rawQuery("SELECT * FROM Period",null);
+
+            long recent_day = 0;
+            cursor.moveToFirst();
+//
+//        CalendarDay calendarDay1 = CalendarDay.from(2017,11,10);
+//        CalendarDay calendarDay = CalendarDay.from(2017,12,10);
+//        long d=calendarDay.getCalendar().getTime().getTime()- calendarDay1.getCalendar().getTime().getTime();
+//
+//        Toast.makeText(lich.this, "time"+d, Toast.LENGTH_LONG).show();
+
+        if(cursor.moveToFirst()) {
+            do {
+                final Long long_date = cursor.getLong(1);
+                if (long_date > recent_day) {
+                    recent_day = long_date;
+                }
+                //  Toast.makeText(lich.this,long_date+"Ngay load tu database là: "+date,Toast.LENGTH_LONG).show();
+                for (int i = 0; i < ddkn; i++) {
+
+                    Date date = new Date(long_date + i * 86400000);
+
+                    //Toast.makeText(lich.this, "date:"+date, Toast.LENGTH_LONG).show();
+                    CalendarDay calendarDay = CalendarDay.from(date);
+                    list.add(calendarDay);
+                }
+                //Toast.makeText(lich.this,long_date+"Ngay load tu database là: "+calendarDay,Toast.LENGTH_LONG).show();
+            }
+            while (cursor.moveToNext());
+            materialCalendarView.addDecorator(new EventDecorator(myColor, list,lich.this));
+
+//du doan chu ky trong 9 tháng tiếp theo
+            for (long k = 1; k < 10; k++) {
+
+               dulieududoan = (recent_day+86400000*k*ddck);
+                for (int i = 0; i < ddkn; i++) {
+
+                    Date date = new Date(dulieududoan + i * 86400000);
+                    //Toast.makeText(lich.this, "date:"+date, Toast.LENGTH_LONG).show();
+                    CalendarDay calendarDay = CalendarDay.from(date);
+                    Preditlist.add(calendarDay);
+                }
+               // Toast.makeText(lich.this,"PHEP TINH"+recent_day+"+("+86400000+"*"+ddck+"*"+j+"="+dulieududoan, Toast.LENGTH_LONG).show();
+                Date date3 = new Date(dulieududoan);
+               // Toast.makeText(lich.this,"PHEP TINH"+dulieududoan, Toast.LENGTH_LONG).show();
+                CalendarDay calendarDay = CalendarDay.from(date3);
+
+                Preditlist.add(calendarDay);
+            }
+
+            materialCalendarView.addDecorator(new EventDecorator(R.color.colorPredict, Preditlist,lich.this));
+        }
          materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
              @Override
              public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
                  Calendar calendar= Calendar.getInstance();
-                // Toast.makeText(lich.this,""+calendar,Toast.LENGTH_SHORT).show();
+                 Long longdate=date.getCalendar().getTimeInMillis();
+                 Toast.makeText(lich.this,"longdate la"+longdate,Toast.LENGTH_LONG).show();
+
+//                 Date date1=new Date(longdate);
+//                 Date date2=new Date(date1.getYear()+0,date1.getMonth()-1,date1.getDay()+0);
+//
+//                 CalendarDay calendarDay = CalendarDay.from(date2);
+//                 Calendar cal1 = date.getCalendar();
+//                 cal1.set(date.getYear(), date.getMonth(), date.getDay());
+//                 Calendar cal2 = Calendar.getInstance();
+//                 cal2.set(date.getYear(), date.getMonth(), date.getDay());
+//
+//                 HashSet<CalendarDay> setDays = getCalendarDaysSet(cal1,cal2);
+                 Intent xuLy = new Intent(lich.this, adddateActivity.class);
+                 xuLy.putExtra("longdate", longdate.toString());
+
+                 startActivity(xuLy);
 
 
-                 Calendar cal1 = date.getCalendar();
-                 cal1.set(date.getYear(), date.getMonth(), date.getDay());
-                 Calendar cal2 = Calendar.getInstance();
-                 cal2.set(date.getYear(), date.getMonth(), date.getDay());
 
-                 HashSet<CalendarDay> setDays = getCalendarDaysSet(cal1,cal2);
-                 int myColor = R.color.colorAccent;
-                 materialCalendarView.addDecorator(new EventDecorator(myColor, setDays));
+                // materialCalendarView.addDecorator(new EventDecorator(myColor,list));
 
              }
          });
@@ -61,8 +186,6 @@ public class lich extends AppCompatActivity {
         getSupportActionBar().setTitle("Lịch");
         //Hiện nút back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
 
 //        calendar = (CalendarView) findViewById(R.id.calendar);
 //        calendar.setFirstDayOfWeek(2);

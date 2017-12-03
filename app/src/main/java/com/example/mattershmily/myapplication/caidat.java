@@ -65,7 +65,6 @@ public class caidat extends AppCompatActivity {
                     else if(i==1)
                     {
                         Intent o1 = new Intent(caidat.this, updateDDCKActivity.class);
-
                         o1.putExtra("ddck", ddck);
                         startActivity(o1);
                     }

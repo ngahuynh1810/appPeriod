@@ -37,17 +37,6 @@
             android:name=".caidat"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <receiver android:name=".lich$MonthCalendarWidget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@layout/activity_lich" />
-        </receiver>
-
         <activity
             android:name=".nhatky_tabhost"
             android:parentActivityName=".MainActivity"
@@ -66,13 +55,15 @@
             android:name=".PasswordActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".adddateActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+        </activity>
     </application>
 
 </manifest>
