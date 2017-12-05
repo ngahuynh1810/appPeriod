@@ -10,12 +10,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+
 import java.util.Date;
 
 public class adddateActivity extends AppCompatActivity {
 TextView tx;
-Button btn;
-    final String DATABASE_NAME="cin.sqlite";
+Button btn,huy;
+    final String DATABASE_NAME="a.sqlite";
     SQLiteDatabase Database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +25,13 @@ Button btn;
         setContentView(R.layout.activity_adddate);
         tx= (TextView) findViewById(R.id.hienthingaythang);
         btn= (Button) findViewById(R.id.themchukymoi);
-
+        huy= (Button) findViewById(R.id.huy);
         Intent i = getIntent();
         String dateString = i.getExtras().getString("longdate","khong tim thay");
 
         final Long longdate=Long.parseLong(dateString);
         Date date=new Date(longdate);
+        CalendarDay calendarDay = CalendarDay.from(date);
         tx.setText(date.toString());
         //luu bien long nay vao database,sau khi luu chuyen intent sang lich Activity
        Toast.makeText(adddateActivity.this,"gia tri truyen qua la"+longdate, Toast.LENGTH_LONG).show();
@@ -36,11 +39,19 @@ Button btn;
            @Override
            public void onClick(View view) {
                ContentValues contentValues=new ContentValues();
-               contentValues.put("dateBegin",longdate);
+               contentValues.put("BeginPeriod",longdate);
                Database=database.initDatabase(adddateActivity.this,DATABASE_NAME);
-               Database.insert("Period",null,contentValues);
+               Database.insert("AddPeriod",null,contentValues);
+               Database.close();
                Intent intent=new Intent(adddateActivity.this,lich.class);
                startActivity(intent);
+           }
+       });
+       huy.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent1=new Intent(adddateActivity.this,lich.class);
+               startActivity(intent1);
            }
        });
 

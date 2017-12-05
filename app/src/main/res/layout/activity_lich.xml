@@ -26,12 +26,6 @@
         app:mcv_selectionColor="#00F"
         />
 
-    <Button
-        android:id="@+id/btn_reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/custom_button_home"
-        android:text="Reset" />
+
 
 </LinearLayout>

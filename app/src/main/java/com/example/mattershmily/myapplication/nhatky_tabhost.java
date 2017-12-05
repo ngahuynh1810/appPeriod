@@ -1,13 +1,12 @@
 package com.example.mattershmily.myapplication;
 
-import android.app.TabActivity;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TabHost;
 
-public class nhatky_tabhost extends TabActivity {
+public class nhatky_tabhost extends AppCompatActivity {
 TabHost tabHost;
 Toolbar toolbar;
     @Override
@@ -15,34 +14,15 @@ Toolbar toolbar;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nhatky_tabhost);
         //Khởi tạo toolbar
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
-//        setSupportActionBar(toolbar);
-//        //Không hiện tiêu đề
-//        getSupportActionBar().setDisplayShowTitleEnabled(true);
-//        getSupportActionBar().setTitle("Nhật ký");
-//        //Hiện nút back
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-       tabHost= (TabHost) findViewById(android.R.id.tabhost);
-        //TabHost tabHost = getTabHost();
-
-        tabHost.setup(getLocalActivityManager());
-        // Tab for Photos
-        TabHost.TabSpec photospec = tabHost.newTabSpec("Photos");
-        photospec.setIndicator("Photos", getResources().getDrawable(R.drawable.ic_menu_camera));
-        Intent photosIntent = new Intent(this, tab1Activity.class);
-        photospec.setContent(photosIntent);
-
-        // Tab for Songs
-        TabHost.TabSpec songspec = tabHost.newTabSpec("Songs");
-        // setting Title and Icon for the Tab
-        songspec.setIndicator("Songs", getResources().getDrawable(R.drawable.ic_menu_camera));
-        Intent songsIntent = new Intent(this, tab2Activity.class);
-        songspec.setContent(songsIntent);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+        //Không hiện tiêu đề
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("Nhật ký");
+        //Hiện nút back
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        tabHost.addTab(photospec);
-        tabHost.addTab(songspec);
 
 
     }

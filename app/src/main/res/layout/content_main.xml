@@ -25,6 +25,7 @@
             android:layout_marginLeft="20dp"
             />
         <TextView
+            android:id="@+id/tx_dudoankinhnguyet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="20 ngày nữa"
@@ -46,6 +47,7 @@
 
             />
         <TextView
+            android:id="@+id/tx_dudoanrungtrung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="6 ngày nữa"
@@ -84,30 +86,29 @@
         android:layout_marginBottom="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:orientation="vertical"
         android:layout_marginTop="170dp"
-        >
+        android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_lich"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center"
-            android:id="@+id/btn_lich"
             android:background="@drawable/custom_button_home"
-            android:textColor="#eeff8b"
-            android:text="Lịch" />
+            android:text="Lịch"
+            android:textColor="#eeff8b" />
 
         <Button
             android:id="@+id/btn_nhatky"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-           android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-           android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/custom_button_home"
             android:text="Nhật ký"
             android:textColor="#eeff8b"
@@ -117,12 +118,12 @@
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center"
             android:background="@drawable/custom_button_home"
-            android:textColor="#eeff8b"
-            android:text="Biểu đồ" />
+            android:text="Biểu đồ"
+            android:textColor="#eeff8b" />
     </LinearLayout>
 </LinearLayout>

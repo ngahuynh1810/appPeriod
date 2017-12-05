@@ -34,13 +34,14 @@ public class EventDecorator implements DayViewDecorator {
 
     @Override
     public void decorate(DayViewFacade view) {
-       // view.addSpan(new DotSpan(5,color));
+      //  view.addSpan(new DotSpan(5,color));
        // view.setSelectionDrawable(getDrawable(R.drawable.select_date));
         //view.addSpan(new ForegroundColorSpan(Color.RED));
-        Drawable highlightDrawable = new ColorDrawable(Color.parseColor("#FFFFACB2"));
+       Drawable highlightDrawable = new ColorDrawable(Color.parseColor("#F77D83"));
         view.setBackgroundDrawable(highlightDrawable);
-       // view.setSelectionDrawable(drawable);
+        view.setSelectionDrawable(drawable);
     }
+
 
 
 }

@@ -42,14 +42,15 @@ public class updateDDKNActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 int ddkn=Integer.parseInt(edDoDaiKinhNguyet.getText().toString());
-                final String DATABASE_NAME="c.sqlite";
+                final String DATABASE_NAME="a.sqlite";
                 SQLiteDatabase Database;
                 ContentValues contentValues=new ContentValues();
-                contentValues.put("dodaikinh",ddkn);
+                contentValues.put("PeriodLength",ddkn);
 
                 Database=database.initDatabase(updateDDKNActivity.this,DATABASE_NAME);
                 int id=1;
-                Database.update("caidat",contentValues,"id=?",new String[] {id+""});
+                Database.update("Setting",contentValues,"id=?",new String[] {id+""});
+                Database.close();
                 Toast.makeText(updateDDKNActivity.this,"saved",Toast.LENGTH_LONG).show();
                 Intent i=new Intent(updateDDKNActivity.this,caidat.class);
                 startActivity(i);

@@ -42,15 +42,16 @@ public class updateDDCKActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 int ddck=Integer.parseInt(edDoDaichuky.getText().toString());
-                final String DATABASE_NAME="c.sqlite";
+                final String DATABASE_NAME="a.sqlite";
                 SQLiteDatabase Database;
                 ContentValues contentValues=new ContentValues();
-                contentValues.put("dodaichuky",ddck);
+                contentValues.put("CycleLength",ddck);
 
                 Database=database.initDatabase(updateDDCKActivity.this,DATABASE_NAME);
                 int id=1;
-                Database.update("caidat",contentValues,"id=?",new String[] {id+""});
+                Database.update("Setting",contentValues,"id=?",new String[] {id+""});
                 Toast.makeText(updateDDCKActivity.this,"saved",Toast.LENGTH_LONG).show();
+                Database.close();
                 Intent i=new Intent(updateDDCKActivity.this,caidat.class);
                 startActivity(i);
             }

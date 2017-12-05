@@ -1,9 +1,11 @@
 package com.example.mattershmily.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -24,13 +26,14 @@ public class caidat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caidat);
-        final String DATABASE_NAME="c.sqlite";
+        final String DATABASE_NAME="a.sqlite";
         SQLiteDatabase Database;
         Database=database.initDatabase(this,DATABASE_NAME);
-        Cursor cursor=Database.rawQuery("SELECT * FROM caidat",null);
+        Cursor cursor=Database.rawQuery("SELECT * FROM Setting",null);
         cursor.moveToFirst();
         final String ddkn=cursor.getString(1);
         final String ddck=cursor.getString(2);
+        cursor.close();
         //Khởi tạo toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -50,6 +53,7 @@ public class caidat extends AppCompatActivity {
             arrayDb.add(new item_caidat("Triệu chứng và tâm trạng","",R.drawable.icon_setting_moods));
             arrayDb.add(new item_caidat("Mật khẩu","",R.drawable.icon_setting_password));
             arrayDb.add(new item_caidat("Ngôn ngữ","",R.drawable.icon_setting_language));
+            arrayDb.add(new item_caidat("Xoá tất cả dữ liệu lịch","",R.drawable.iconsreturn50));
             Adapter=new adapter_caidat(this,R.layout.item_caidat,arrayDb);
             lvDb.setAdapter(Adapter);
             lvDb.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,9 +72,38 @@ public class caidat extends AppCompatActivity {
                         o1.putExtra("ddck", ddck);
                         startActivity(o1);
                     }
-                    else if(i==2)
+                    else if(i==5)
+                    {
+                        Intent intent_matkhau=new Intent(caidat.this,setPasswordActivity.class);
+                        startActivity(intent_matkhau);
+                    }
+                    else if(i==7)
                     {
 
+                        //Tạo đối tượng
+                        AlertDialog.Builder b = new AlertDialog.Builder(caidat.this);
+//Thiết lập tiêu đề
+                        b.setTitle("Xác nhận xoá các dữ liệu");
+                        b.setMessage("Thao tác này sẽ không thể hoàn tác");
+// Nút Ok
+                        b.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                final String DATABASE_NAME="a.sqlite";
+                                final SQLiteDatabase Database;
+                                Database=database.initDatabase(caidat.this,DATABASE_NAME);
+                                Database.delete("addPeriod","",null);
+                            }
+                        });
+//Nút Cancel
+                        b.setNegativeButton("Huỷ bỏ", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+//Tạo dialog
+                        AlertDialog al = b.create();
+//Hiển thị
+                        al.show();
                     }
 
                 }
