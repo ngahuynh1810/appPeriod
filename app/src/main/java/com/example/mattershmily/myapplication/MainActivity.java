@@ -13,12 +13,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity    implements NavigationView.OnNavigationItemSelectedListener{
        final String DATABASE_NAME="a.sqlite";
     SQLiteDatabase Database;
 Button btn_lich;
-TextView tx_dudoan;
+TextView tx_dudoankinhnguyet,tx_dudoanrungtrung;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,9 @@ TextView tx_dudoan;
         cursor.moveToFirst();
         final int ddck=cursor.getInt(2);
 
-tx_dudoan= (TextView) findViewById(R.id.tx_dudoankinhnguyet);
+tx_dudoankinhnguyet= (TextView) findViewById(R.id.tx_dudoankinhnguyet);
+tx_dudoanrungtrung= (TextView) findViewById(R.id.tx_dudoanrungtrung);
+
         long recent_day = 0;
         Cursor cursor1=Database.rawQuery("SELECT * FROM AddPeriod",null);
         cursor1.moveToFirst();
@@ -45,15 +50,19 @@ tx_dudoan= (TextView) findViewById(R.id.tx_dudoankinhnguyet);
         }
         cursor1.close();
         Long date_current=System.currentTimeMillis();
-        long songayconlai_long=recent_day+ddck*86400000-date_current;
-        long songayconlai=songayconlai_long/86400000;
-        tx_dudoan.setText(String.valueOf(songayconlai));
+        Date date=new Date(date_current);
+        Date date2=new Date(recent_day);
+
+        Toast.makeText(MainActivity.this,"ngay hien tai la "+date+"ngay gan day nhat la"+date2,Toast.LENGTH_LONG);
+        long rungtrung_songayconlai_long=recent_day+ddck*86400000-14*86400000;
+        long rungtrung_songayconlai=rungtrung_songayconlai_long/86400000;
+        long kinhnguyet_songayconlai_long=recent_day+ddck*86400000-date_current;
+        long kinhnguyet_songayconlai=kinhnguyet_songayconlai_long/86400000;
+        tx_dudoankinhnguyet.setText(String.valueOf(kinhnguyet_songayconlai));
+        tx_dudoanrungtrung.setText(String.valueOf(rungtrung_songayconlai));
 
         Database.close();
-//        Database=database.initDatabase(this,DATABASE_NAME);
-//        Cursor cursor=Database.rawQuery("SELECT * FROM AddPeriod",null);
-//        cursor.moveToFirst();
-        //Toast.makeText(this,cursor.getString(1),Toast.LENGTH_LONG).show();
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

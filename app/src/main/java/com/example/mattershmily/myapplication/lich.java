@@ -172,10 +172,13 @@ public class lich extends AppCompatActivity {
 
         switch (id) {
             case android.R.id.home:
-                onBackPressed();
+                Intent intent = new Intent(lich.this,caidat.class);
+                startActivity(intent);
                 return true;
             default:
-                return super.onOptionsItemSelected(item);
+                Intent intent1 = new Intent(lich.this,caidat.class);
+                startActivity(intent1);
+                return true;
         }
     }
 

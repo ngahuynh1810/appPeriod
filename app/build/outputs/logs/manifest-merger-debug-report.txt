@@ -140,54 +140,56 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Matter Shmily\.
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:21:9-57
 activity#com.example.mattershmily.myapplication.MainActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:22:9-27:20
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:22:9-31:20
 	android:label
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:24:13-45
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:25:13-56
 	android:name
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:23:13-41
-activity#com.example.mattershmily.myapplication.lich
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:28:9-31:59
-	android:parentActivityName
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:30:13-55
-	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:31:13-56
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:26:13-30:29
+action#android.intent.action.MAIN
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:29:13-33
-activity#com.example.mattershmily.myapplication.caidat
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:27:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:29:27-74
+activity#com.example.mattershmily.myapplication.lich
 ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:32:9-35:59
 	android:parentActivityName
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:34:13-55
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:33:13-35
-activity#com.example.mattershmily.myapplication.nhatky_tabhost
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:33:13-33
+activity#com.example.mattershmily.myapplication.caidat
 ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:36:9-39:59
 	android:parentActivityName
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:38:13-55
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:37:13-43
-activity#com.example.mattershmily.myapplication.tab1Activity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:40:9-50
-	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:40:19-47
-activity#com.example.mattershmily.myapplication.tab2Activity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:41:9-50
-	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:41:19-47
-activity#com.example.mattershmily.myapplication.updateDDCKActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:42:9-45:59
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:37:13-35
+activity#com.example.mattershmily.myapplication.nhatky_tabhost
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:40:9-43:59
 	android:parentActivityName
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:44:13-49
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:42:13-55
 	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:45:13-56
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:43:13-56
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:43:13-47
-activity#com.example.mattershmily.myapplication.updateDDKNActivity
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:41:13-43
+activity#com.example.mattershmily.myapplication.tab1Activity
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:44:9-50
+	android:name
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:44:19-47
+activity#com.example.mattershmily.myapplication.tab2Activity
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:45:9-50
+	android:name
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:45:19-47
+activity#com.example.mattershmily.myapplication.updateDDCKActivity
 ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:46:9-49:59
 	android:parentActivityName
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:48:13-49
@@ -195,22 +197,20 @@ ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:46:9-49:59
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:49:13-56
 	android:name
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:47:13-47
-activity#com.example.mattershmily.myapplication.PasswordActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:50:9-58:20
+activity#com.example.mattershmily.myapplication.updateDDKNActivity
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:50:9-53:59
+	android:parentActivityName
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:52:13-49
 	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:52:13-44
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:53:13-56
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:51:13-45
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:53:13-57:29
-action#android.intent.action.MAIN
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:54:17-69
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:51:13-47
+activity#com.example.mattershmily.myapplication.PasswordActivity
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:54:9-58:20
+	android:theme
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:56:13-44
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:54:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:56:17-77
-	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:56:27-74
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:55:13-45
 activity#com.example.mattershmily.myapplication.adddateActivity
 ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:59:9-63:20
 	android:theme
