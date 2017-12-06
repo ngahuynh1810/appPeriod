@@ -20,6 +20,10 @@
         "source": "C:\\Users\\Matter Shmily\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c150b10ebb25ed2fbb6e2f887fdca0ed\\res\\anim\\abc_slide_out_top.xml"
     },
     {
+        "merged": "D:\\appPeriod\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_recyclerview.xml.flat",
+        "source": "D:\\appPeriod\\app\\src\\main\\res\\layout\\item_recyclerview.xml"
+    },
+    {
         "merged": "D:\\appPeriod\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Matter Shmily\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c150b10ebb25ed2fbb6e2f887fdca0ed\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },

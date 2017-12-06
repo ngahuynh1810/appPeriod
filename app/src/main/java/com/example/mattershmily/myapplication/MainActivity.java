@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import java.util.Date;
 
+import static java.lang.Math.abs;
+
 public class MainActivity extends AppCompatActivity    implements NavigationView.OnNavigationItemSelectedListener{
        final String DATABASE_NAME="a.sqlite";
     SQLiteDatabase Database;
@@ -30,7 +32,8 @@ TextView tx_dudoankinhnguyet,tx_dudoanrungtrung,tx_dudoancothai;
         Database=database.initDatabase(this,DATABASE_NAME);
         Cursor cursor=Database.rawQuery("SELECT * FROM Setting",null);
         cursor.moveToFirst();
-        final int ddck=cursor.getInt(2);
+        final int ddck_int=cursor.getInt(2);
+        final long ddck=Long.valueOf(ddck_int);
 
 tx_dudoankinhnguyet= (TextView) findViewById(R.id.tx_dudoankinhnguyet);
 tx_dudoanrungtrung= (TextView) findViewById(R.id.tx_dudoanrungtrung);
@@ -45,15 +48,18 @@ tx_dudoancothai= (TextView) findViewById(R.id.tx_dudoancothai);
                 if (long_date > recent_day) {
                     recent_day = long_date;
                 }
-                Date datee=new Date(long_date);
-
+              //  Date date2=new Date(long_date);
+              //  Toast.makeText(MainActivity.this," "+date2.getDate()+"/"+date2.getMonth()+"/"+date2.getYear(),Toast.LENGTH_LONG).show();
             }
             while (cursor1.moveToNext());
         }
         cursor1.close();
+
+
         Long date_current=System.currentTimeMillis();
+      //  Toast.makeText(MainActivity.this,recent_day+"<"+date_current,Toast.LENGTH_LONG).show();
         Date date=new Date(date_current);
-        Date date2=new Date(recent_day);
+
 
 long longmin=recent_day+(ddck-9)*86400000;
 long longmax=recent_day+(ddck-19)*86400000;
@@ -61,12 +67,28 @@ if(date_current>=longmin && date_current<=longmax)
     tx_dudoancothai.setText("CAO");
  else tx_dudoancothai.setText("THẤP");
 
-        long rungtrung_songayconlai_long=recent_day+(ddck-14)*86400000-date_current;
-        long rungtrung_songayconlai=rungtrung_songayconlai_long/86400000;
-        long kinhnguyet_songayconlai_long=recent_day+ddck*86400000-date_current;
-        long kinhnguyet_songayconlai=kinhnguyet_songayconlai_long/86400000;
-        tx_dudoankinhnguyet.setText(String.valueOf(kinhnguyet_songayconlai)+"Ngày");
-        tx_dudoanrungtrung.setText(String.valueOf(rungtrung_songayconlai)+"Ngày");
+        long kinhnguyetlong=recent_day+ddck*86400000-date_current;
+        long rungtrunglong=recent_day+(ddck-14)*86400000-date_current;
+
+   Toast.makeText(MainActivity.this,kinhnguyetlong+"va"+rungtrunglong,Toast.LENGTH_LONG).show();
+        long rungtrungsongayconlai=rungtrunglong/86400000;
+        long kinhnguyetsongayconlai=kinhnguyetlong/86400000;
+if(rungtrungsongayconlai>0 && kinhnguyetsongayconlai>0) {
+    tx_dudoankinhnguyet.setText(String.valueOf(kinhnguyetsongayconlai) + " Ngày nữa");
+    tx_dudoanrungtrung.setText(String.valueOf(rungtrungsongayconlai) + " Ngày nữa");
+}
+else if(rungtrungsongayconlai<0 && kinhnguyetsongayconlai>0)
+{
+    long rungtrunglong1=recent_day+(ddck*2-14)*86400000-date_current;
+    long rungtrungsongayconlai1=rungtrunglong1/86400000;
+    tx_dudoankinhnguyet.setText(String.valueOf(kinhnguyetsongayconlai) + " Ngày nữa");
+    tx_dudoanrungtrung.setText(String.valueOf(rungtrungsongayconlai1) + " Ngày nữa");
+}
+else if(rungtrungsongayconlai<0 && kinhnguyetsongayconlai<0)
+{
+    tx_dudoankinhnguyet.setText("Trễ "+String.valueOf(abs(kinhnguyetsongayconlai)) + " Ngày");
+    tx_dudoanrungtrung.setText("");
+}
 
         Database.close();
 
@@ -139,5 +161,10 @@ protected void onDestroy()
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void onPause() {
+        super.onPause();
+        finish();
     }
 }

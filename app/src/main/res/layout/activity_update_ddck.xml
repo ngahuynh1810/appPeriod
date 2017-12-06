@@ -19,14 +19,17 @@
         android:id="@+id/txtDoDaichuky"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="Độ dài Chu Kỳ"
-        android:textSize="25dp"/>
+        android:textSize="19sp"/>
     <LinearLayout
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <EditText
         android:id="@+id/edDoDaichuky"
+            android:layout_marginLeft="10dp"
         android:layout_width="100dp"
         android:layout_height="wrap_content" />
         <TextView
@@ -39,11 +42,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chúng tôi sử dụng độ dài chu kỳ để dự tính ngày bắt đầu chu kỳ tiếp theo của bạn"
+        android:layout_marginLeft="10dp"
+        android:text="Chúng tôi sử dụng độ dài chu kỳ để dự tính ngày bắt đầu chu kỳ tiếp theo"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="#ffc0a3"
         android:layout_marginTop="60dp"
         android:id="@+id/save_ddck"
         android:text="Save"

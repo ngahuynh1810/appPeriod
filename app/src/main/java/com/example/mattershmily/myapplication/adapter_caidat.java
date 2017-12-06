@@ -38,12 +38,12 @@ public class adapter_caidat extends ArrayAdapter<item_caidat> {
         }
         //anh xa
         TextView tx_ten = (TextView) convertView.findViewById(R.id.viewName);
-        TextView tx_gia=(TextView) convertView.findViewById(R.id.viewNumber);
+
         ImageView tx_hinh=(ImageView) convertView.findViewById(R.id.viewimage);
         //gan gia tri
         item_caidat db=objects.get(position);
         tx_ten.setText(db.getTen());
-        tx_gia.setText(db.getMa());
+
         tx_hinh.setImageResource(db.getHinh());
         return convertView;
 //        return super.getView(position, convertView, parent);

@@ -19,23 +19,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text"
+        android:layout_marginTop="10dp"
         android:text="Độ dài Giai đoạn hoàng thể"
-        android:textSize="25sp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19sp"
         />
+    <LinearLayout
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
     <EditText
         android:id="@+id/edDoDaiHoangThe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:layout_width="100dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày"/>
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:text="Căn cứ vào độ dài hoàng thể để dự đoán thời gian rụng trứng tiếp theo(Từ ngày rụng trứng đến ngày đầu hành kinh tiếp theo,thường là 14 ngày)"
         />
 
     <Button
         android:id="@+id/btnDoDaiHT"
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
+        android:layout_marginTop="60dp"
+         android:background="#ffc0a3"
         android:layout_height="wrap_content"
         android:text="Save" />
 </LinearLayout>

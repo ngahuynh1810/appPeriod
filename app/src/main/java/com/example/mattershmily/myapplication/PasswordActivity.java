@@ -52,6 +52,11 @@ Button btn_commit;
             });
 
         }
+
         Database2.close();
+    }
+    public void onPause() {
+        super.onPause();
+        finish();
     }
 }

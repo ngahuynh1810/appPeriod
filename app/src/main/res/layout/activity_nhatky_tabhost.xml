@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffd39c"
     tools:context="com.example.mattershmily.myapplication.lich">
 
     <android.support.v7.widget.Toolbar
@@ -16,10 +17,47 @@
         android:title="Nhật ký">
 
     </android.support.v7.widget.Toolbar>
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Chu kỳ đã qua"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Chu kỳ đã qua"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:textColor="#89441f"
+        android:gravity="center"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="center"/>
+
+    <android.support.v7.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:id="@+id/recyclerView"
+      android:layout_marginLeft="10dp"
+      android:background="@drawable/background_nau"
+      android:layout_height="150dp">
+
+  </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Chu kỳ sắp tới"
+        android:textSize="19sp"
+        android:gravity="center"
+        android:layout_marginBottom="6dp"
+        android:textStyle="bold"
+        android:textColor="#89441f"
+        android:layout_gravity="center"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recyclerView1"
+        android:layout_height="230dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/background_nau">
+
+    </android.support.v7.widget.RecyclerView>
+
 
 
 

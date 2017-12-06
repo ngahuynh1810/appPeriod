@@ -82,4 +82,8 @@ public class updateDDKNActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
 }

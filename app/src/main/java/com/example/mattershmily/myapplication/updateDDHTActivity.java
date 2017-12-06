@@ -55,4 +55,8 @@ Button btn_save;
 
 
     }
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
 }

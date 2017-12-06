@@ -54,6 +54,7 @@ public class updateDDCKActivity extends AppCompatActivity {
                 Database.close();
                 Intent i=new Intent(updateDDCKActivity.this,caidat.class);
                 startActivity(i);
+
             }
         });
 
@@ -81,6 +82,10 @@ public class updateDDCKActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public void onPause() {
+        super.onPause();
+        finish();
     }
     }
 

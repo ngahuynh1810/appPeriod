@@ -78,18 +78,21 @@ public class lich extends AppCompatActivity {
                 if (long_date > recent_day) {
                     recent_day = long_date;
                 }
-                //  Toast.makeText(lich.this,long_date+"Ngay load tu database là: "+date,Toast.LENGTH_LONG).show();
+                Date date = new Date(long_date);
+                 //       Toast.makeText(lich.this,long_date+"Ngay load tu database là: "+date.getDate()+"/"+date.getMonth()+"/"+date.getYear(),Toast.LENGTH_LONG).show();
                 for (int i = 0; i < ddkn; i++) {
 
-                    Date date = new Date(long_date + i * 86400000);
+                    Date date1 = new Date(long_date + i * 86400000);
 
                     //Toast.makeText(lich.this, "date:"+date, Toast.LENGTH_LONG).show();
-                    CalendarDay calendarDay = CalendarDay.from(date);
+                    CalendarDay calendarDay = CalendarDay.from(date1);
                     list.add(calendarDay);
                 }
-                //Toast.makeText(lich.this,long_date+"Ngay load tu database là: "+calendarDay,Toast.LENGTH_LONG).show();
+
             }
             while (cursor1.moveToNext());
+            Date date_recent=new Date(recent_day);
+            Toast.makeText(lich.this,"Ngay load tu database là: "+date_recent.getDate()+"/"+date_recent.getMonth()+"/"+date_recent.getYear(),Toast.LENGTH_LONG).show();
             materialCalendarView.addDecorator(new EventDecorator(myColor, list,lich.this));
             cursor1.close();
 //********du doan chu ky trong 3 tháng tiếp theo************
@@ -127,42 +130,50 @@ public class lich extends AppCompatActivity {
 
          materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
              @Override
-             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull final CalendarDay date, boolean selected) {
                  Calendar calendar= Calendar.getInstance();
                  final Long longdate=date.getCalendar().getTimeInMillis();
-
-               //  Toast.makeText(lich.this,"longdate "+longdate+"date"+date.getDate()+"/"+date.getMonth()+"/"+date.getYear(),Toast.LENGTH_LONG).show();
+                 long date_current=System.currentTimeMillis();
+                 if(longdate>date_current)
+                 {
+                     Toast.makeText(lich.this,date.getDay()+"/"+date.getMonth()+"/"+date.getYear(),Toast.LENGTH_SHORT).show();
+                 }
+                 else {
+                     //  Toast.makeText(lich.this,"longdate "+longdate+"date"+date.getDate()+"/"+date.getMonth()+"/"+date.getYear(),Toast.LENGTH_LONG).show();
 //                //Tạo đối tượng
-                 AlertDialog.Builder b = new AlertDialog.Builder(lich.this);
+                     AlertDialog.Builder b = new AlertDialog.Builder(lich.this);
 //Thiết lập tiêu đề
-                 b.setTitle("Thêm vào ngày bắt đầu chu kỳ");
+                     b.setTitle("Thêm vào ngày bắt đầu chu kỳ");
 
 // Nút Ok
-                 b.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
-                     public void onClick(DialogInterface dialog, int id) {
-                         final String DATABASE_NAME="a.sqlite";
-                         final SQLiteDatabase Database;
-                         Database=database.initDatabase(lich.this,DATABASE_NAME);
-                         ContentValues contentValues=new ContentValues();
-                         contentValues.put("BeginPeriod",longdate);
-                         Database.insert("AddPeriod",null,contentValues);
-                         Toast.makeText(lich.this,"Đã thêm",Toast.LENGTH_LONG).show();
-                         Database.close();
-                         Intent intent=new Intent(lich.this,lich.class);
-                         startActivity(intent);
+                     b.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+                         public void onClick(DialogInterface dialog, int id) {
+                             final String DATABASE_NAME = "a.sqlite";
+                             final SQLiteDatabase Database;
+                             Database = database.initDatabase(lich.this, DATABASE_NAME);
+                             ContentValues contentValues = new ContentValues();
+                             contentValues.put("BeginPeriod", longdate);
+                             Database.insert("AddPeriod", null, contentValues);
+                             Toast.makeText(lich.this, "Đã thêm"+longdate+"ngay"+date.getDay()+"/"+date.getMonth()+1+"/"+date.getYear(), Toast.LENGTH_LONG).show();
+                             Database.close();
+                             Intent intent = new Intent(lich.this, lich.class);
+                             startActivity(intent);
 
-                     }
-                 });
+                         }
+                     });
 //Nút Cancel
-                 b.setNegativeButton("Huỷ bỏ", new DialogInterface.OnClickListener() {
-                     public void onClick(DialogInterface dialog, int id) {
-                         dialog.cancel();
-                     }
-                 });
+                     b.setNegativeButton("Huỷ bỏ", new DialogInterface.OnClickListener() {
+                         public void onClick(DialogInterface dialog, int id) {
+                             dialog.cancel();
+                         }
+                     });
 //Tạo dialog
-                 AlertDialog al = b.create();
+                     AlertDialog al = b.create();
 //Hiển thị
-                 al.show();
+                     al.show();
+                 }
+
+
              }
          });
 
@@ -176,6 +187,10 @@ public class lich extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+    }
+    public void onPause() {
+        super.onPause();
+        finish();
     }
     private HashSet<CalendarDay> getCalendarDaysSet(Calendar cal1, Calendar cal2) {
         HashSet<CalendarDay> setDays = new HashSet<>();
@@ -209,8 +224,8 @@ public class lich extends AppCompatActivity {
 
         switch (id) {
             case android.R.id.home:
-                onBackPressed();
-                return true;
+               Intent intent=new Intent(lich.this,MainActivity.class);
+               startActivity(intent);
             default:
                 onBackPressed();
                 return true;
