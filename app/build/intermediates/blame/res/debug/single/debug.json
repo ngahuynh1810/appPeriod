@@ -1932,6 +1932,10 @@
         "source": "C:\\Users\\Matter Shmily\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c150b10ebb25ed2fbb6e2f887fdca0ed\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\appPeriod\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_button_xacnhan.xml.flat",
+        "source": "D:\\appPeriod\\app\\src\\main\\res\\drawable\\custom_button_xacnhan.xml"
+    },
+    {
         "merged": "D:\\appPeriod\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Matter Shmily\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c150b10ebb25ed2fbb6e2f887fdca0ed\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },

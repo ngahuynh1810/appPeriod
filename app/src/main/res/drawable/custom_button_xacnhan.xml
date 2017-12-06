@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"  android:layout_height="10dp">
+    <item android:state_pressed="true" >   <!-- Trạng thái khi nút click -->
+        <shape>
+            <gradient
+                android:startColor="#ffb176"
+                android:endColor="#d9f7cdae"
+                android:angle="270" />
+
+            <stroke
+                android:width="1dp"
+                android:color="#FFFFFF" />
+
+            <corners
+                android:radius="5dp" />
+
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp" />
+        </shape>
+    </item>
+
+    <item>            <!-- Trạng thái bình thường khi không click -->
+        <shape>
+            <gradient
+                android:startColor="#0004e2"
+                android:endColor="#5f57ff"
+                android:angle="270"
+
+                 />
+            <!--<solid-->
+                <!--android:color="#d76767" />            &lt;!&ndash; Thiết lập màu nền cho nút &ndash;&gt;-->
+
+
+<size android:width="150dp"
+    android:height="20dp"
+    />
+            <corners
+                android:radius="20dp" />
+
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp" />
+        </shape>
+    </item>
+
+</selector>

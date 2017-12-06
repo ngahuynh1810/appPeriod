@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mattershmily.myapplication.MainActivity"
     tools:showIn="@layout/app_bar_main"
-    android:background="@drawable/anh"
+    android:background="@drawable/background_nau"
 
     android:orientation="vertical">
    <LinearLayout

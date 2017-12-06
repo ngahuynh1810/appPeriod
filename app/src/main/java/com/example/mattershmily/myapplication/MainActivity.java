@@ -73,6 +73,7 @@ if(date_current>=longmin && date_current<=longmax)
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
