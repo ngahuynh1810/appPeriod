@@ -10,10 +10,7 @@
             android:id="@+id/nav_nhatky"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Nhật ký" />
-        <item
-            android:id="@+id/nav_bieudo"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Biểu đồ" />
+
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
@@ -21,17 +18,5 @@
 
     </group>
 
-    <item android:title="Cài đặt">
-        <menu>
-            <item
-                android:id="@+id/nav_caidat"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Cài đặt chung" />
-            <item
-                android:id="@+id/nav_ngonngu"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Ngôn ngữ" />
-        </menu>
-    </item>
 
 </menu>

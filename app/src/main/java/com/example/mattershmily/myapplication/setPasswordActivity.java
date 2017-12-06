@@ -48,6 +48,12 @@ Toolbar toolbar;
                 Database=database.initDatabase(setPasswordActivity.this,DATABASE_NAME);
                 Database.update("Setting",contentValues,"id=?",new String[] {1+""});
                 Toast.makeText(setPasswordActivity.this,"Đã lưu mật khẩu",Toast.LENGTH_SHORT);
+//  setPassword ve 1-khoi dong man hinh khoa moi khi truy cap vao ung dung
+                ContentValues contentValues2=new ContentValues();
+                int s=1;
+                contentValues2.put("SetPassword",s);
+                int id=1;
+                Database.update("Setting",contentValues2,"id=?",new String[] {id+""});
                 Database.close();
                 Intent o1 = new Intent(setPasswordActivity.this, caidat.class);
                 startActivity(o1);
@@ -65,6 +71,7 @@ Toolbar toolbar;
     btn_unset.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+
             ContentValues contentValues1=new ContentValues();
             int s=0;
             contentValues1.put("SetPassword",s);

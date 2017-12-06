@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,9 @@ public class caidat extends AppCompatActivity {
         cursor.moveToFirst();
         final String ddkn=cursor.getString(1);
         final String ddck=cursor.getString(2);
+        final String ddht=cursor.getString(3);
         cursor.close();
+        Database.close();
         //Khởi tạo toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,10 +52,7 @@ public class caidat extends AppCompatActivity {
             arrayDb.add(new item_caidat("Độ dài kinh nguyệt","ddkn",R.drawable.icon_setting_period));
             arrayDb.add(new item_caidat("Độ dài chu kỳ","ddck",R.drawable.icon_setting_period));
             arrayDb.add(new item_caidat("Rụng trứng","",R.drawable.icon_setting_ovulation));
-            arrayDb.add(new item_caidat("Nhắc nhở","",R.drawable.icon_setting_nhacnho));
-            arrayDb.add(new item_caidat("Triệu chứng và tâm trạng","",R.drawable.icon_setting_moods));
             arrayDb.add(new item_caidat("Mật khẩu","",R.drawable.icon_setting_password));
-            arrayDb.add(new item_caidat("Ngôn ngữ","",R.drawable.icon_setting_language));
             arrayDb.add(new item_caidat("Xoá tất cả dữ liệu lịch","",R.drawable.iconsreturn50));
             Adapter=new adapter_caidat(this,R.layout.item_caidat,arrayDb);
             lvDb.setAdapter(Adapter);
@@ -72,12 +72,18 @@ public class caidat extends AppCompatActivity {
                         o1.putExtra("ddck", ddck);
                         startActivity(o1);
                     }
-                    else if(i==5)
+                    else if(i==2)
+                    {
+                        Intent o2 = new Intent(caidat.this, updateDDHTActivity.class);
+                        o2.putExtra("ddht", ddht);
+                        startActivity(o2);
+                    }
+                    else if(i==3)
                     {
                         Intent intent_matkhau=new Intent(caidat.this,setPasswordActivity.class);
                         startActivity(intent_matkhau);
                     }
-                    else if(i==7)
+                    else if(i==4)
                     {
 
                         //Tạo đối tượng

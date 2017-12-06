@@ -1,11 +1,14 @@
 package com.example.mattershmily.myapplication;
 
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -34,6 +37,7 @@ public class lich extends AppCompatActivity {
     ArrayList<CalendarDay> list = new ArrayList<>();
     ArrayList<CalendarDay> Preditlist = new ArrayList<>();
     ArrayList<CalendarDay> list3 = new ArrayList<>();
+    ArrayList<CalendarDay> list_ovilation = new ArrayList<>();
     //load list tu database
 
     @Override
@@ -60,9 +64,9 @@ public class lich extends AppCompatActivity {
        cursor.moveToFirst();
         final int ddkn=cursor.getInt(1);
         final int ddck=cursor.getInt(2);
-
+        final int ddht=cursor.getInt(3);
         cursor.close();
-        Toast.makeText(lich.this,ddkn+" "+ddck,Toast.LENGTH_LONG);
+
 
            long recent_day = 0;
         Cursor cursor1=Database.rawQuery("SELECT * FROM AddPeriod",null);
@@ -88,8 +92,8 @@ public class lich extends AppCompatActivity {
             while (cursor1.moveToNext());
             materialCalendarView.addDecorator(new EventDecorator(myColor, list,lich.this));
             cursor1.close();
-//********du doan chu ky trong 5 tháng tiếp theo************
-            for (long k = 0; k < 6; k++) {
+//********du doan chu ky trong 3 tháng tiếp theo************
+            for (long k = 0; k < 4; k++) {
 
                dulieududoan = (recent_day+86400000*k*ddck);
                 for (int i = 0; i < ddkn; i++) {
@@ -100,9 +104,9 @@ public class lich extends AppCompatActivity {
 
                 }
                 //du doan thoi ky co thai
-                for(int j=0;j<=5;j++) {
-                    Date date3 = new Date(dulieududoan - 14 * 86400000+j*86400000);
-                    Date date4 = new Date(dulieududoan - 14 * 86400000-j*86400000);
+                for(int j=0;j<=4;j++) {
+                    Date date3 = new Date(dulieududoan - ddht * 86400000+j*86400000);
+                    Date date4 = new Date(dulieududoan - ddht * 86400000-j*86400000);
                     //Toast.makeText(lich.this, "date:"+date, Toast.LENGTH_LONG).show();
                     CalendarDay calendarDay3 = CalendarDay.from(date3);
                     CalendarDay calendarDay4 = CalendarDay.from(date4);
@@ -110,7 +114,11 @@ public class lich extends AppCompatActivity {
                     list3.add(calendarDay4);
                 }
                 materialCalendarView.addDecorator(new EventDecorator3(R.color.colorPrimary,list3,lich.this));
-
+                //them dotSpan vao de trang tri ngay rung trung
+                Date date_ovilation = new Date(dulieududoan - ddht * 86400000);
+                CalendarDay calendarDay5 = CalendarDay.from(date_ovilation);
+                list_ovilation.add(calendarDay5);
+                materialCalendarView.addDecorator(new Event_ovilation(R.color.colorPrimary,list_ovilation,lich.this));
                // Toast.makeText(lich.this,"PHEP TINH"+recent_day+"+("+86400000+"*"+ddck+"*"+j+"="+dulieududoan, Toast.LENGTH_LONG).show();
             }
             materialCalendarView.addDecorator(new EventDecorator(R.color.colorPredict, Preditlist,lich.this));
@@ -121,11 +129,40 @@ public class lich extends AppCompatActivity {
              @Override
              public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
                  Calendar calendar= Calendar.getInstance();
-                 Long longdate=date.getCalendar().getTimeInMillis();
-                 Toast.makeText(lich.this,"longdate "+longdate,Toast.LENGTH_LONG).show();
-                 Intent xuLy = new Intent(lich.this, adddateActivity.class);
-                 xuLy.putExtra("longdate", longdate.toString());
-                 startActivity(xuLy);
+                 final Long longdate=date.getCalendar().getTimeInMillis();
+
+               //  Toast.makeText(lich.this,"longdate "+longdate+"date"+date.getDate()+"/"+date.getMonth()+"/"+date.getYear(),Toast.LENGTH_LONG).show();
+//                //Tạo đối tượng
+                 AlertDialog.Builder b = new AlertDialog.Builder(lich.this);
+//Thiết lập tiêu đề
+                 b.setTitle("Thêm vào ngày bắt đầu chu kỳ");
+
+// Nút Ok
+                 b.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+                     public void onClick(DialogInterface dialog, int id) {
+                         final String DATABASE_NAME="a.sqlite";
+                         final SQLiteDatabase Database;
+                         Database=database.initDatabase(lich.this,DATABASE_NAME);
+                         ContentValues contentValues=new ContentValues();
+                         contentValues.put("BeginPeriod",longdate);
+                         Database.insert("AddPeriod",null,contentValues);
+                         Toast.makeText(lich.this,"Đã thêm",Toast.LENGTH_LONG).show();
+                         Database.close();
+                         Intent intent=new Intent(lich.this,lich.class);
+                         startActivity(intent);
+
+                     }
+                 });
+//Nút Cancel
+                 b.setNegativeButton("Huỷ bỏ", new DialogInterface.OnClickListener() {
+                     public void onClick(DialogInterface dialog, int id) {
+                         dialog.cancel();
+                     }
+                 });
+//Tạo dialog
+                 AlertDialog al = b.create();
+//Hiển thị
+                 al.show();
              }
          });
 
@@ -172,13 +209,12 @@ public class lich extends AppCompatActivity {
 
         switch (id) {
             case android.R.id.home:
-                Intent intent = new Intent(lich.this,caidat.class);
-                startActivity(intent);
+                onBackPressed();
                 return true;
             default:
-                Intent intent1 = new Intent(lich.this,caidat.class);
-                startActivity(intent1);
+                onBackPressed();
                 return true;
+
         }
     }
 

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity    implements NavigationView
        final String DATABASE_NAME="a.sqlite";
     SQLiteDatabase Database;
 Button btn_lich;
-TextView tx_dudoankinhnguyet,tx_dudoanrungtrung;
+TextView tx_dudoankinhnguyet,tx_dudoanrungtrung,tx_dudoancothai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ TextView tx_dudoankinhnguyet,tx_dudoanrungtrung;
 
 tx_dudoankinhnguyet= (TextView) findViewById(R.id.tx_dudoankinhnguyet);
 tx_dudoanrungtrung= (TextView) findViewById(R.id.tx_dudoanrungtrung);
-
+tx_dudoancothai= (TextView) findViewById(R.id.tx_dudoancothai);
         long recent_day = 0;
         Cursor cursor1=Database.rawQuery("SELECT * FROM AddPeriod",null);
         cursor1.moveToFirst();
@@ -45,6 +45,8 @@ tx_dudoanrungtrung= (TextView) findViewById(R.id.tx_dudoanrungtrung);
                 if (long_date > recent_day) {
                     recent_day = long_date;
                 }
+                Date datee=new Date(long_date);
+
             }
             while (cursor1.moveToNext());
         }
@@ -53,13 +55,18 @@ tx_dudoanrungtrung= (TextView) findViewById(R.id.tx_dudoanrungtrung);
         Date date=new Date(date_current);
         Date date2=new Date(recent_day);
 
-        Toast.makeText(MainActivity.this,"ngay hien tai la "+date+"ngay gan day nhat la"+date2,Toast.LENGTH_LONG);
-        long rungtrung_songayconlai_long=recent_day+ddck*86400000-14*86400000;
+long longmin=recent_day+(ddck-9)*86400000;
+long longmax=recent_day+(ddck-19)*86400000;
+if(date_current>=longmin && date_current<=longmax)
+    tx_dudoancothai.setText("CAO");
+ else tx_dudoancothai.setText("THẤP");
+
+        long rungtrung_songayconlai_long=recent_day+(ddck-14)*86400000-date_current;
         long rungtrung_songayconlai=rungtrung_songayconlai_long/86400000;
         long kinhnguyet_songayconlai_long=recent_day+ddck*86400000-date_current;
         long kinhnguyet_songayconlai=kinhnguyet_songayconlai_long/86400000;
-        tx_dudoankinhnguyet.setText(String.valueOf(kinhnguyet_songayconlai));
-        tx_dudoanrungtrung.setText(String.valueOf(rungtrung_songayconlai));
+        tx_dudoankinhnguyet.setText(String.valueOf(kinhnguyet_songayconlai)+"Ngày");
+        tx_dudoanrungtrung.setText(String.valueOf(rungtrung_songayconlai)+"Ngày");
 
         Database.close();
 
@@ -77,6 +84,11 @@ tx_dudoanrungtrung= (TextView) findViewById(R.id.tx_dudoanrungtrung);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+protected void onDestroy()
+{
+    super.onDestroy();
+    Toast.makeText(MainActivity.this,"Bạn đã thoát ứng dụng",Toast.LENGTH_LONG);
+}
 
     @Override
     public void onBackPressed() {
@@ -118,8 +130,6 @@ tx_dudoanrungtrung= (TextView) findViewById(R.id.tx_dudoanrungtrung);
         } else if (id == R.id.nav_nhatky) {
             Intent k = new Intent(this,nhatky_tabhost.class);
             startActivity(k);
-        } else if (id == R.id.nav_bieudo) {
-
         } else if (id == R.id.nav_manage) {
             Intent u = new Intent(this,caidat.class);
             startActivity(u);

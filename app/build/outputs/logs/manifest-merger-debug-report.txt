@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
-INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
-INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
-INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
 MERGED from [com.android.support:design:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\0c45f9212da66e8df4a7d83f82259495\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\c150b10ebb25ed2fbb6e2f887fdca0ed\AndroidManifest.xml:17:1-31:12
 MERGED from [com.prolificinteractive:material-calendarview:1.4.3] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\material-calendarview-1.4.3.aar\4558896d909de37514c7452f8cdb56ac\AndroidManifest.xml:2:1-14:12
@@ -18,20 +18,20 @@ MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Matter Shmily\
 MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\0d6c7dd5f2c9dfff2d023058b6ac82b7\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.3.1.aar\d464a06d76c143b4dfeb842580a1c285\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\support-compat-25.3.1.aar\0fb70cfea841acf66964de3005efce1e\AndroidManifest.xml:17:1-31:12
-INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
-INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
-INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
+INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
 	package
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:3:5-53
 		INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml
 		INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
 		INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-70:12
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:1-71:12
 		INJECTED from D:\appPeriod\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:2:11-69
@@ -100,7 +100,7 @@ ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:13:5-73
 	android:name
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:13:22-70
 application
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:15:5-68:19
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:15:5-69:19
 MERGED from [com.android.support:design:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\0c45f9212da66e8df4a7d83f82259495\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:design:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\0c45f9212da66e8df4a7d83f82259495\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\c150b10ebb25ed2fbb6e2f887fdca0ed\AndroidManifest.xml:29:5-20
@@ -134,62 +134,60 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Matter Shmily\.
 	android:roundIcon
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:19:9-54
 	android:icon
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:17:9-41
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:17:9-42
 	android:allowBackup
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:21:9-57
 activity#com.example.mattershmily.myapplication.MainActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:22:9-31:20
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:22:9-27:20
 	android:label
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:24:13-45
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:25:13-56
 	android:name
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:23:13-41
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:26:13-30:29
-action#android.intent.action.MAIN
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:27:17-69
-	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:27:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:29:17-77
-	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:29:27-74
 activity#com.example.mattershmily.myapplication.lich
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:28:9-31:59
+	android:parentActivityName
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:30:13-55
+	android:theme
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:31:13-56
+	android:name
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:29:13-33
+activity#com.example.mattershmily.myapplication.caidat
 ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:32:9-35:59
 	android:parentActivityName
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:34:13-55
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:33:13-33
-activity#com.example.mattershmily.myapplication.caidat
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:33:13-35
+activity#com.example.mattershmily.myapplication.nhatky_tabhost
 ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:36:9-39:59
 	android:parentActivityName
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:38:13-55
 	android:theme
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:37:13-35
-activity#com.example.mattershmily.myapplication.nhatky_tabhost
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:40:9-43:59
-	android:parentActivityName
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:42:13-55
-	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:43:13-56
-	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:41:13-43
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:37:13-43
 activity#com.example.mattershmily.myapplication.tab1Activity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:44:9-50
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:40:9-50
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:44:19-47
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:40:19-47
 activity#com.example.mattershmily.myapplication.tab2Activity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:45:9-50
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:41:9-50
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:45:19-47
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:41:19-47
 activity#com.example.mattershmily.myapplication.updateDDCKActivity
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:42:9-45:59
+	android:parentActivityName
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:44:13-49
+	android:theme
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:45:13-56
+	android:name
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:43:13-47
+activity#com.example.mattershmily.myapplication.updateDDKNActivity
 ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:46:9-49:59
 	android:parentActivityName
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:48:13-49
@@ -197,34 +195,38 @@ ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:46:9-49:59
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:49:13-56
 	android:name
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:47:13-47
-activity#com.example.mattershmily.myapplication.updateDDKNActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:50:9-53:59
-	android:parentActivityName
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:52:13-49
-	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:53:13-56
-	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:51:13-47
 activity#com.example.mattershmily.myapplication.PasswordActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:54:9-58:20
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:50:9-58:20
 	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:56:13-44
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:52:13-44
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:55:13-45
-activity#com.example.mattershmily.myapplication.adddateActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:59:9-63:20
-	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:61:13-56
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:51:13-45
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:53:9-57:25
+action#android.intent.action.MAIN
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:54:13-65
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:60:13-44
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:54:21-62
+category#android.intent.category.LAUNCHER
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:56:13-73
+	android:name
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:56:23-70
 activity#com.example.mattershmily.myapplication.setPasswordActivity
-ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:64:9-67:20
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:59:9-62:68
+	android:parentActivityName
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:61:13-49
+	android:theme
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:62:13-56
+	android:name
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:60:13-48
+activity#com.example.mattershmily.myapplication.updateDDHTActivity
+ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:63:9-68:20
 	android:parentActivityName
 		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:65:13-49
 	android:theme
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:66:13-56
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:64:13-56
 	android:name
-		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:64:19-54
+		ADDED from D:\appPeriod\app\src\main\AndroidManifest.xml:63:19-53
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\0c45f9212da66e8df4a7d83f82259495\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Matter Shmily\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\c150b10ebb25ed2fbb6e2f887fdca0ed\AndroidManifest.xml:25:5-27:34

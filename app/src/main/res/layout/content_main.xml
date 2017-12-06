@@ -15,96 +15,107 @@
        android:layout_width="340dp"
        android:layout_gravity="center"
        android:orientation="vertical"
-       android:layout_height="200dp"
-       android:background="#fadbc6">
+       android:layout_height="470dp"
+       android:background="@drawable/background_nau">
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
+       android:background="@drawable/background_dudoan"
        >
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Kỳ Kinh sắp tới   "
             android:textSize="20dp"
-            android:textColor="#023971"
-            android:layout_marginTop="20dp"
+            android:textColor="#ffffff"
+          android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             />
         <TextView
             android:id="@+id/tx_dudoankinhnguyet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="20 ngày nữa"
 
-            android:textColor="#bf1313"
-            android:layout_marginTop="20dp"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             />
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="20dp">
+        android:background="@drawable/background_dudoan"
+     >
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Kỳ rụng trứng sắp tới   "
             android:textSize="20dp"
-            android:textColor="#023971"
-            android:layout_marginTop="20dp"
+            android:textColor="#ffffff"
             android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
 
             />
         <TextView
             android:id="@+id/tx_dudoanrungtrung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="6 ngày nữa"
-            android:layout_marginTop="20dp"
-            android:textColor="#d61d1d"
+
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
             />
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="50dp"
-
+        android:background="@drawable/background_dudoan"
         android:orientation="horizontal"
-        android:layout_marginLeft="20dp">
+      >
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Khả năng thụ thai   "
-            android:layout_marginTop="20dp"
-            android:textSize="20dp"
-            android:textColor="#023971"
             android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+
 
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CAO"
-            android:layout_marginTop="20dp"
-            android:textColor="#f4eae0"
+            android:id="@+id/tx_dudoancothai"
+            android:text=""
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textColor="#fdfdfd"
             />
 
-    </LinearLayout>
-
-
-   </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="340dp"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:layout_height="200dp"
-        android:background="#fac6a4">
-
 
     </LinearLayout>
+<ImageView
+    android:layout_width="250dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:src="@drawable/image_comment"
+
+    />
+
+       <ImageView
+
+           android:layout_width="150dp"
+           android:layout_height="150dp"
+           android:layout_gravity="end"
+           android:src="@drawable/img_pet_rabbit"
+
+           />
+
+</LinearLayout>
 </LinearLayout>
