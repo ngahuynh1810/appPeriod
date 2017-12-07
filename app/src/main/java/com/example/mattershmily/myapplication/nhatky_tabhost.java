@@ -32,42 +32,46 @@ Toolbar toolbar;
         //Hiện nút back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ArrayList<oneitem_recyclerview> arr = new ArrayList<>();;
-        ArrayList<oneitem_recyclerview> arr1 = new ArrayList<>();;
-        final String DATABASE_NAME="a.sqlite";
+        ArrayList<oneitem_recyclerview> arr = new ArrayList<>();
+        ;
+        ArrayList<oneitem_recyclerview> arr1 = new ArrayList<>();
+        ;
+        final String DATABASE_NAME = "a.sqlite";
         final SQLiteDatabase Database;
-        Database=database.initDatabase(this,DATABASE_NAME);
+        Database = database.initDatabase(this, DATABASE_NAME);
 
-        Cursor cursor1=Database.rawQuery("SELECT * FROM Setting",null);
+        Cursor cursor1 = Database.rawQuery("SELECT * FROM Setting", null);
         cursor1.moveToFirst();
-        final long ddck=Long.valueOf(cursor1.getInt(2));
+        final long ddck = Long.valueOf(cursor1.getInt(2));
 
-        Cursor cursor=Database.rawQuery("SELECT * FROM AddPeriod",null);
-        long recentday=0;
-        if(cursor.moveToFirst()) {
+        Cursor cursor = Database.rawQuery("SELECT * FROM AddPeriod", null);
+        long recentday = 0;
+        if (cursor.moveToFirst()) {
             do {
                 final long longdate = cursor.getLong(1);
-                if(recentday<longdate)
-                    recentday=longdate;
+                if (recentday < longdate)
+                    recentday = longdate;
                 Date date = new Date(longdate);
-                CalendarDay calendarDay=CalendarDay.from(date);
-               // Toast.makeText(nhatky_tabhost.this, calendarDay.getDay() + " tháng " + (calendarDay.getMonth()+1) + " năm " + calendarDay.getYear(), Toast.LENGTH_LONG).show();
-                arr.add(new oneitem_recyclerview(calendarDay.getDay(),(calendarDay.getMonth()+1),calendarDay.getYear()));
-            }while (cursor.moveToNext());
+                CalendarDay calendarDay = CalendarDay.from(date);
+                // Toast.makeText(nhatky_tabhost.this, calendarDay.getDay() + " tháng " + (calendarDay.getMonth()+1) + " năm " + calendarDay.getYear(), Toast.LENGTH_LONG).show();
+                arr.add(new oneitem_recyclerview(calendarDay.getDay(), (calendarDay.getMonth() + 1), calendarDay.getYear()));
+            } while (cursor.moveToNext());
             cursor.close();
+        }
+        Database.close();
+        if (recentday != 0) {
+            for (int i = 1; i <= 5; i++) {
+                long dayPredit = recentday + 86400000 * i * ddck;
+                Date date1 = new Date(dayPredit);
+                CalendarDay calendarDay1 = CalendarDay.from(date1);
+                arr1.add(new oneitem_recyclerview(calendarDay1.getDay(), (calendarDay1.getMonth() + 1), calendarDay1.getYear()));
             }
-            Database.close();
-for(int i=1;i<=5;i++) {
-    long dayPredit = recentday + 86400000 * i * ddck;
-    Date date1 = new Date(dayPredit);
-    CalendarDay calendarDay1 = CalendarDay.from(date1);
-    arr1.add(new oneitem_recyclerview(calendarDay1.getDay(),(calendarDay1.getMonth()+1),calendarDay1.getYear()));
-}
-        RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recyclerView);
-        RecyclerView recyclerView1= (RecyclerView) findViewById(R.id.recyclerView1);
-            initView(recyclerView,arr);
-            initView(recyclerView1,arr1);
+            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+            RecyclerView recyclerView1 = (RecyclerView) findViewById(R.id.recyclerView1);
+            initView(recyclerView, arr);
+            initView(recyclerView1, arr1);
 
+        }
     }
 public void initView( RecyclerView recyclerView, ArrayList<oneitem_recyclerview> arr)
 {
