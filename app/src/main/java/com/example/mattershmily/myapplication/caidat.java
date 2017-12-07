@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -115,6 +115,32 @@ public class caidat extends AppCompatActivity {
                 }
             });
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("ANDROID.......", "The onStart() event");
+    }
+    public void onPause() {
+        super.onPause();
+        Log.d("ANDROID..........","The onPause() event");
+        finish();
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("ANDROID..........","The onStop() event");
+    }
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        Log.d("ANDROID...............", "The onDestroy() event");
+       // Toast.makeText(caidat.this,"Bạn đã thoát ứng dụng",Toast.LENGTH_LONG);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("ANDROID..............", "The onResume() event");
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -127,8 +153,8 @@ public class caidat extends AppCompatActivity {
 
         switch (id) {
             case android.R.id.home:
-                onBackPressed();
-                return true;
+                Intent intent=new Intent(caidat.this,MainActivity.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }

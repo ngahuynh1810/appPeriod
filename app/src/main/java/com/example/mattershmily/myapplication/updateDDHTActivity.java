@@ -46,7 +46,7 @@ Button btn_save;
                 Database=database.initDatabase(updateDDHTActivity.this,DATABASE_NAME);
                 int id=1;
                 Database.update("Setting",contentValues,"id=?",new String[] {id+""});
-                Toast.makeText(updateDDHTActivity.this,"saved",Toast.LENGTH_LONG).show();
+                Toast.makeText(updateDDHTActivity.this,"Đã lưu",Toast.LENGTH_LONG).show();
                 Database.close();
                 Intent i=new Intent(updateDDHTActivity.this,caidat.class);
                 startActivity(i);

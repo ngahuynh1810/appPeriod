@@ -57,7 +57,7 @@
     <TextView
         android:id="@+id/show_nam"
         android:layout_marginTop="10dp"
-        android:layout_width="30dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
         android:textStyle="bold"
         android:textColor="#8b4707"

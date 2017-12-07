@@ -51,7 +51,7 @@ public class updateDDKNActivity extends AppCompatActivity {
                 int id=1;
                 Database.update("Setting",contentValues,"id=?",new String[] {id+""});
                 Database.close();
-                Toast.makeText(updateDDKNActivity.this,"saved",Toast.LENGTH_LONG).show();
+                Toast.makeText(updateDDKNActivity.this,"Đã lưu",Toast.LENGTH_LONG).show();
                 Intent i=new Intent(updateDDKNActivity.this,caidat.class);
                 startActivity(i);
             }

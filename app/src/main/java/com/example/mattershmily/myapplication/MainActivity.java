@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
@@ -70,7 +71,7 @@ if(date_current>=longmin && date_current<=longmax)
         long kinhnguyetlong=recent_day+ddck*86400000-date_current;
         long rungtrunglong=recent_day+(ddck-14)*86400000-date_current;
 
-   Toast.makeText(MainActivity.this,kinhnguyetlong+"va"+rungtrunglong,Toast.LENGTH_LONG).show();
+   //Toast.makeText(MainActivity.this,kinhnguyetlong+"va"+rungtrunglong,Toast.LENGTH_LONG).show();
         long rungtrungsongayconlai=rungtrunglong/86400000;
         long kinhnguyetsongayconlai=kinhnguyetlong/86400000;
 if(rungtrungsongayconlai>0 && kinhnguyetsongayconlai>0) {
@@ -84,7 +85,7 @@ else if(rungtrungsongayconlai<0 && kinhnguyetsongayconlai>0)
     tx_dudoankinhnguyet.setText(String.valueOf(kinhnguyetsongayconlai) + " Ngày nữa");
     tx_dudoanrungtrung.setText(String.valueOf(rungtrungsongayconlai1) + " Ngày nữa");
 }
-else if(rungtrungsongayconlai<0 && kinhnguyetsongayconlai<0)
+else if(rungtrungsongayconlai<0 && kinhnguyetsongayconlai<0 &&rungtrungsongayconlai>-60 && kinhnguyetsongayconlai>=-30)
 {
     tx_dudoankinhnguyet.setText("Trễ "+String.valueOf(abs(kinhnguyetsongayconlai)) + " Ngày");
     tx_dudoanrungtrung.setText("");
@@ -107,11 +108,7 @@ else if(rungtrungsongayconlai<0 && kinhnguyetsongayconlai<0)
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-protected void onDestroy()
-{
-    super.onDestroy();
-    Toast.makeText(MainActivity.this,"Bạn đã thoát ứng dụng",Toast.LENGTH_LONG);
-}
+
 
     @Override
     public void onBackPressed() {
@@ -162,9 +159,32 @@ protected void onDestroy()
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("ANDROID.......", "The onStart() event");
+    }
     public void onPause() {
         super.onPause();
+        Log.d("ANDROID..........","The onPause() event");
         finish();
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("ANDROID..........","The onStop() event");
+    }
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        Log.d("ANDROID...............", "The onDestroy() event");
+        Toast.makeText(MainActivity.this,"Bạn đã thoát ứng dụng",Toast.LENGTH_LONG);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("ANDROID..............", "The onResume() event");
+    }
+
 }
+

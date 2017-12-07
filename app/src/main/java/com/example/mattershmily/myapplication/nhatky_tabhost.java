@@ -1,5 +1,6 @@
 package com.example.mattershmily.myapplication;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -9,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TabHost;
-import android.widget.Toast;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 
@@ -51,17 +51,17 @@ Toolbar toolbar;
                     recentday=longdate;
                 Date date = new Date(longdate);
                 CalendarDay calendarDay=CalendarDay.from(date);
-                Toast.makeText(nhatky_tabhost.this, date.getDay() + " tháng " + date.getMonth()+1 + " năm " + date.getYear(), Toast.LENGTH_LONG).show();
-                arr.add(new oneitem_recyclerview(calendarDay.getDay(),calendarDay.getMonth()+1,calendarDay.getYear()));
+               // Toast.makeText(nhatky_tabhost.this, calendarDay.getDay() + " tháng " + (calendarDay.getMonth()+1) + " năm " + calendarDay.getYear(), Toast.LENGTH_LONG).show();
+                arr.add(new oneitem_recyclerview(calendarDay.getDay(),(calendarDay.getMonth()+1),calendarDay.getYear()));
             }while (cursor.moveToNext());
             cursor.close();
             }
             Database.close();
 for(int i=1;i<=5;i++) {
     long dayPredit = recentday + 86400000 * i * ddck;
-    Date date = new Date(dayPredit);
-    CalendarDay calendarDay = CalendarDay.from(date);
-    arr1.add(new oneitem_recyclerview(date.getDay(),date.getMonth()+1,date.getYear()));
+    Date date1 = new Date(dayPredit);
+    CalendarDay calendarDay1 = CalendarDay.from(date1);
+    arr1.add(new oneitem_recyclerview(calendarDay1.getDay(),(calendarDay1.getMonth()+1),calendarDay1.getYear()));
 }
         RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recyclerView);
         RecyclerView recyclerView1= (RecyclerView) findViewById(R.id.recyclerView1);
@@ -96,13 +96,18 @@ public void initView( RecyclerView recyclerView, ArrayList<oneitem_recyclerview>
 
         switch (id) {
             case android.R.id.home:
-                onBackPressed();
-                return true;
+                Intent intent=new Intent(nhatky_tabhost.this,MainActivity.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 
 
 

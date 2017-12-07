@@ -92,7 +92,7 @@ public class lich extends AppCompatActivity {
             }
             while (cursor1.moveToNext());
             Date date_recent=new Date(recent_day);
-            Toast.makeText(lich.this,"Ngay load tu database là: "+date_recent.getDate()+"/"+date_recent.getMonth()+"/"+date_recent.getYear(),Toast.LENGTH_LONG).show();
+           // Toast.makeText(lich.this,"Ngay load tu database là: "+date_recent.getDate()+"/"+date_recent.getMonth()+"/"+date_recent.getYear(),Toast.LENGTH_LONG).show();
             materialCalendarView.addDecorator(new EventDecorator(myColor, list,lich.this));
             cursor1.close();
 //********du doan chu ky trong 3 tháng tiếp theo************
@@ -136,7 +136,7 @@ public class lich extends AppCompatActivity {
                  long date_current=System.currentTimeMillis();
                  if(longdate>date_current)
                  {
-                     Toast.makeText(lich.this,date.getDay()+"/"+date.getMonth()+"/"+date.getYear(),Toast.LENGTH_SHORT).show();
+                     Toast.makeText(lich.this,date.getDay()+"/"+(date.getMonth()+1)+"/"+date.getYear(),Toast.LENGTH_SHORT).show();
                  }
                  else {
                      //  Toast.makeText(lich.this,"longdate "+longdate+"date"+date.getDate()+"/"+date.getMonth()+"/"+date.getYear(),Toast.LENGTH_LONG).show();
@@ -154,7 +154,7 @@ public class lich extends AppCompatActivity {
                              ContentValues contentValues = new ContentValues();
                              contentValues.put("BeginPeriod", longdate);
                              Database.insert("AddPeriod", null, contentValues);
-                             Toast.makeText(lich.this, "Đã thêm"+longdate+"ngay"+date.getDay()+"/"+date.getMonth()+1+"/"+date.getYear(), Toast.LENGTH_LONG).show();
+                             Toast.makeText(lich.this, "Đã thêm ngày "+date.getDay()+"/"+(date.getMonth()+1)+"/"+date.getYear(), Toast.LENGTH_LONG).show();
                              Database.close();
                              Intent intent = new Intent(lich.this, lich.class);
                              startActivity(intent);

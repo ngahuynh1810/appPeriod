@@ -50,7 +50,7 @@ public class updateDDCKActivity extends AppCompatActivity {
                 Database=database.initDatabase(updateDDCKActivity.this,DATABASE_NAME);
                 int id=1;
                 Database.update("Setting",contentValues,"id=?",new String[] {id+""});
-                Toast.makeText(updateDDCKActivity.this,"saved",Toast.LENGTH_LONG).show();
+                Toast.makeText(updateDDCKActivity.this,"Đã lưu",Toast.LENGTH_LONG).show();
                 Database.close();
                 Intent i=new Intent(updateDDCKActivity.this,caidat.class);
                 startActivity(i);
