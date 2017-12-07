@@ -62,8 +62,11 @@ tx_dudoancothai= (TextView) findViewById(R.id.tx_dudoancothai);
         Date date=new Date(date_current);
 
 
-long longmin=recent_day+(ddck-9)*86400000;
-long longmax=recent_day+(ddck-19)*86400000;
+long longmax=recent_day+(ddck-9)*86400000;
+long longmin=recent_day+(ddck-19)*86400000;
+
+Toast.makeText(MainActivity.this,longmin+"<"+date_current+"<"+longmax,Toast.LENGTH_LONG).show();
+
 if(date_current>=longmin && date_current<=longmax)
     tx_dudoancothai.setText("CAO");
  else tx_dudoancothai.setText("THẤP");
